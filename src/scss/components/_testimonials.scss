@@ -1,0 +1,163 @@
+.testimonials {
+  &__content {
+    color: var(--white);
+    overflow: hidden;
+    padding-top: 84px;
+    padding-bottom: 30px;
+    background-color: var(--dark);
+    border-radius: 45px;
+    max-width: 1240px;
+    max-height: 625px;
+
+    @include mobile {
+      border-radius: 30px;
+      padding-top: 50px;
+    }
+
+    @media (max-width: 360px) {
+      padding-block: 20px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 125px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s ease;
+    width: max-content;
+
+    @include mobile {
+      margin-bottom: 60px;
+      gap: 30px;
+    }
+    @include mobile-small {
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 606px;
+    margin-left: 20px;
+
+    transition: all 0.5s ease;
+
+    @include mobile {
+      width: 330px;
+    }
+    @media (max-width: 360px) {
+      width: 280px;
+    }
+  }
+
+  &__text {
+    border: 1px solid var(--green);
+    border-radius: 40px;
+    padding: 52px;
+    padding-top: 48px;
+    line-height: 120%;
+    margin-bottom: 48px;
+
+    @include mobile {
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: 400px) {
+      padding: 20px;
+    }
+  }
+
+  &__info {
+    margin-left: 80px;
+
+    @include mobile {
+      margin-left: 30px;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--green);
+    margin-bottom: 2px;
+  }
+
+  &__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+
+    @media (max-width: 400px) {
+      gap: 20px;
+    }
+  }
+
+  &__arrow {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    transition: all 0.2s linear;
+
+    &:last-child {
+      transform: rotate(180deg);
+    }
+    &:hover {
+      opacity: 0.6;
+    }
+    @include mobile-small {
+      border: none;
+    }
+  }
+
+  &__pagination {
+    cursor: pointer;
+
+    & svg {
+      transition: all 0.2s linear;
+    }
+
+    & svg:hover {
+      opacity: 0.6;
+    }
+
+    &-active path {
+      fill: var(--green);
+    }
+    & svg:not(:last-child) {
+      margin-right: 20px;
+
+      @media (max-width: 400px) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.triangle {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  width: 0;
+  height: 0;
+  border-left: 32px solid transparent;
+  border-right: 32px solid transparent;
+  border-bottom: 39px solid transparent;
+  border-top-color: var(--green);
+  border-bottom-color: var(--green);
+  transform: rotate(180deg);
+
+  @include mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,140 @@
+.services {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 100px;
+
+    @include tablet {
+      margin-bottom: 60px;
+      grid-template-columns: auto;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    box-shadow: 0 5px 0 0 var(--dark);
+    background-color: var(--grey);
+    border: 1px solid var(--dark);
+    border-radius: 45px;
+    padding: 50px;
+    max-width: 600px;
+    height: 310px;
+
+    @media (max-width: 600px) {
+      padding: 35px;
+      flex-direction: column-reverse;
+      height: auto;
+      gap: 30px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(5) {
+      background-color: var(--green);
+    }
+    &:nth-child(3),
+    &:nth-child(6) {
+      background-color: var(--dark);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: 600px) {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    & span {
+      white-space: nowrap;
+      background-color: var(--green);
+      border-radius: 7px;
+      padding: 0px 7px;
+
+      &:first-child {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+    &-light {
+      & span {
+        background-color: var(--white);
+      }
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    & span {
+      font-size: 20px;
+      line-height: 140%;
+    }
+  }
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__info {
+    background-color: var(--grey);
+    border-radius: 45px;
+    padding-inline: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      padding-inline: 30px;
+    }
+    @include mobile {
+      text-align: center;
+      flex-direction: column;
+      gap: 20px;
+      background: none;
+      border-radius: 0;
+      padding: 0;
+    }
+  }
+
+  &__info-content {
+    max-width: 500px;
+
+    @include tablet {
+      max-width: 420px;
+    }
+  }
+
+  &__info-text {
+    margin-block: 26px;
+
+    @include mobile-small {
+      margin-block: 16px;
+    }
+  }
+
+  &__info-image {
+    padding-right: 80px;
+
+    @include tablet {
+      padding-right: 0;
+    }
+    @include mobile {
+      width: 300px;
+    }
+  }
+}

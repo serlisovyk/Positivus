@@ -1,0 +1,39 @@
+.partners {
+  padding-bottom: 140px;
+
+  @include tablet {
+    padding-bottom: 110px;
+  }
+  @include mobile {
+    padding-bottom: 70px;
+  }
+  @include mobile-small {
+    padding-bottom: 40px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 4.5vw;
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+    }
+    @include mobile-small {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: start;
+    }
+  }
+
+  &__item svg {
+    filter: grayscale(1);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}

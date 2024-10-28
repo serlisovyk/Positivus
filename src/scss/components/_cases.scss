@@ -1,0 +1,90 @@
+.cases {
+  padding-bottom: 140px;
+
+  @include tablet {
+    padding-bottom: 110px;
+  }
+  @include mobile {
+    padding-bottom: 70px;
+  }
+  @include mobile-small {
+    padding-bottom: 40px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    border-radius: 45px;
+    padding: 70px 60px;
+    color: var(--white);
+
+    & span {
+      min-width: 186px;
+      height: 1px;
+      background-color: var(--white);
+      transform: rotate(-90deg);
+
+      @media (max-width: 1180px) {
+        min-width: 100px;
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+    @include tablet {
+      gap: 20px;
+      background: none;
+      padding: 0;
+      border-radius: 0;
+    }
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 286px;
+    height: 186px;
+
+    @include tablet {
+      text-align: center;
+      gap: 20px;
+      background-color: var(--dark);
+      border-radius: 45px;
+      padding: 10px;
+      height: 240px;
+    }
+    @include mobile {
+      border-radius: 30px;
+      padding: 20px;
+      height: 180px;
+    }
+  }
+
+  &__text {
+    @include tablet {
+      padding-top: 20px;
+    }
+    @include mobile {
+      padding-top: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 20px;
+    line-height: 140%;
+    color: var(--green);
+
+    @include tablet {
+      justify-content: center;
+    }
+  }
+}

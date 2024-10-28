@@ -1,0 +1,84 @@
+.team {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 387px);
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+
+    @media (max-width: 1280px) {
+      grid-template-columns: repeat(2, 387px);
+      gap: 20px;
+    }
+    @include mobile {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__card {
+    box-shadow: 0 5px 0 0 var(--dark);
+    border: 1px solid var(--dark);
+    border-radius: 45px;
+    padding: 40px 35px;
+    max-width: 387px;
+    height: 330px;
+
+    @include mobile-small {
+      padding: 20px;
+      height: 320px;
+
+      &:first-child {
+        height: 294px;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    gap: 20px;
+
+    @include mobile-small {
+      gap: 10px;
+    }
+  }
+
+  &__image img {
+    min-width: 103px;
+  }
+
+  &__title {
+    align-self: flex-end;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &__prof {
+    white-space: nowrap;
+    line-height: 120%;
+  }
+  &__link {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__line {
+    background-color: var(--black);
+    max-width: 317px;
+    height: 1px;
+    margin-block: 28px;
+  }
+
+  &__text {
+    line-height: 120%;
+  }
+
+  &__btn {
+    text-align: right;
+  }
+}

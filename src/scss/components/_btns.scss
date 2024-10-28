@@ -1,0 +1,51 @@
+.btn {
+  background-color: var(--dark);
+  border-radius: 14px;
+  width: 264px;
+  height: 68px;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--white);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    filter: grayscale(0.7);
+  }
+
+  @include tablet {
+    width: 230px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+.btn-light {
+  white-space: nowrap;
+  background: transparent;
+  border: 1px solid var(--dark);
+  border-radius: 14px;
+  width: 231px;
+  color: var(--black);
+
+  &:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  @include tablet {
+    width: 180px;
+    height: 56px;
+    font-size: 18px;
+
+    border-color: var(--white);
+    color: var(--white);
+  }
+}
+.btn-green {
+  font-weight: 500;
+  color: var(--black) !important;
+  background-color: var(--green);
+
+  @media (max-width: 1220px) {
+    width: 230px;
+  }
+}

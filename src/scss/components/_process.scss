@@ -1,0 +1,148 @@
+.process {
+  &__item {
+    border: 1px solid var(--dark);
+    border-radius: 45px;
+    padding: 41px 60px;
+    box-shadow: 0 5px 0 0 var(--dark);
+    background: var(--grey);
+    transition: all 0.2s ease-in-out;
+
+    @include mobile {
+      padding: 30px;
+    }
+    @media (max-width: 360px) {
+      padding: 20px;
+    }
+
+    &-active {
+      background-color: var(--green);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item-top {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__item-state {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    @include mobile-small {
+      gap: 16px;
+    }
+  }
+
+  &__number {
+    font-weight: 500;
+    font-size: 60px;
+
+    @include mobile {
+      font-size: 40px;
+    }
+    @include mobile-small {
+      font-size: 32px;
+    }
+  }
+  &__title {
+    @include mobile {
+      font-size: 24px;
+    }
+    @include mobile-small {
+      font-size: 18px;
+    }
+  }
+
+  &__btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 58px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--dark);
+    transition: all 0.2s ease-in-out;
+
+    @include mobile {
+      min-width: 40px;
+    }
+    @include mobile-small {
+      min-width: 30px;
+    }
+
+    &:hover {
+      background-color: var(--dark);
+    }
+
+    &:hover span,
+    &:hover span::after {
+      background-color: var(--white);
+    }
+
+    & span {
+      position: relative;
+      display: block;
+      width: 26px;
+      height: 7px;
+      background-color: var(--dark);
+      transition: all 0.2s ease-in-out;
+
+      @include mobile {
+        width: 15px;
+        height: 3px;
+      }
+      @include mobile-small {
+        width: 12px;
+      }
+
+      &::after {
+        content: '';
+        width: 26px;
+        height: 7px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transform: rotate(90deg);
+        background-color: var(--dark);
+        transition: all 0.2s ease;
+
+        @include mobile {
+          width: 15px;
+          height: 3px;
+        }
+        @include mobile-small {
+          width: 12px;
+        }
+
+        .process__item-active & {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__item-content {
+    display: none;
+
+    .process__item-active & {
+      display: block;
+    }
+  }
+
+  &__line {
+    background-color: var(--dark);
+    max-width: 1114px;
+    height: 1px;
+    margin-block: 30px;
+  }
+}
